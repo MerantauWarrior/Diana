@@ -1,0 +1,1268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dream</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'DomaineSansTextWeb-Regular';
+      src: url('assets/fonts/DomaineSansTextWeb-Regular.eot'); /* IE9 Compat Modes */
+      src: url('assets/fonts/DomaineSansTextWeb-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('assets/fonts/DomaineSansTextWeb-Regular.woff2') format('woff2'), /* Super Modern Browsers */ url('assets/fonts/DomaineSansTextWeb-Regular.woff') format('woff') /* Pretty Modern Browsers */
+    }
+
+    @font-face {
+      font-family: 'DomaineSansTextWeb-Bold';
+      src: url('assets/fonts/DomaineSansTextWeb-Bold.eot'); /* IE9 Compat Modes */
+      src: url('assets/fonts/DomaineSansTextWeb-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('assets/fonts/DomaineSansTextWeb-Bold.woff2') format('woff2'), /* Super Modern Browsers */ url('assets/fonts/DomaineSansTextWeb-Bold.woff') format('woff') /* Pretty Modern Browsers */
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    *, *:after, *:before {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    h1, h2, h3, h4, h5, h6, p {
+      margin: 0;
+    }
+
+    .landing{
+      font-family: 'DomaineSansTextWeb-Regular', sans-serif;
+      font-weight: 400;
+    }
+
+    .landing h1, .landing h2, .landing h3, .landing h4, .landing h5, .landing h6{
+      font-family: 'DomaineSansTextWeb-Regular',sans-serif;
+      color: inherit;
+    }
+
+    .landing a, .landing button {
+      outline: none;
+      text-decoration: none;
+      -webkit-transition: all 0.25s;
+      -o-transition: all 0.25s;
+      transition: all 0.25s;
+    }
+    .landing a:hover,
+    .landing a:focus,
+    .landing a:active {
+      text-decoration: none;
+    }
+
+    .landing img, .landing svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .btn-regular {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 228px;
+      height: 60px;
+      padding: 14px 18px;
+      border-radius: 12px;
+      background-color: #D29700;
+      font-size: 20px;
+      line-height: 28px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+
+    /*top*/
+    .landing {
+      padding: 63px 0;
+    }
+
+    .landing-top {
+      margin-bottom: 70px;
+    }
+    .landing-top__logo{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 68px;
+    }
+
+    .landing-top__title {
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 40px;
+      font-weight: 600;
+      font-size: 50px;
+      line-height: 64px;
+      text-align: center;
+      text-transform: capitalize;
+      color: #1D1D1D;
+    }
+
+    .landing-switch {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    .landing-switch__item{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 434px;
+      height: 60px;
+      border: 2px solid #1A2A59;
+      font-family: 'DomaineSansTextWeb-Bold', sans-serif;
+      font-size: 20px;
+      line-height: 24px;
+      text-transform: uppercase;
+      color: #1A2A59;
+    }
+
+    .landing-switch__item:first-child {
+      border-radius: 60px 0 0 60px;
+    }
+
+    .landing-switch__item:last-child {
+      border-radius: 0 60px 60px 0;
+    }
+
+    .landing-switch__item:hover,
+    .landing-switch__item:active,
+    .landing-switch__item_active {
+      background-color: #1A2A59;
+      color: #FFFFFF;
+    }
+
+    /*tabs*/
+    .landing-tabs__item {
+      display: none;
+    }
+
+    .landing-tabs__item_active {
+      display: block;
+    }
+
+    /*screen 1*/
+    .screen-one {
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1264px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 59px;
+    }
+
+    .screen-one__media {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .screen-one__content {
+      position: relative;
+      width: 100%;
+      max-width: 496px;
+      margin-left: auto;
+      padding: 70px 59px 169px 43px;
+      background-color: #1A2A59;
+      color: #FFFFFF;
+      z-index: 2;
+    }
+
+    #tab2 .screen-one__content {
+      padding: 75px 53px 133px 43px;
+    }
+
+    .screen-one__suptitle {
+      margin-bottom: 11px;
+      font-family: 'DomaineSansTextWeb-Bold', sans-serif;
+      font-size: 20px;
+      line-height: 24px;
+      text-transform: uppercase;
+    }
+
+    .screen-one__title {
+      margin-bottom: 18px;
+      font-weight: 400;
+      font-size: 50px;
+      line-height: 60px;
+      letter-spacing: -0.05em;
+    }
+
+    .screen-one__text {
+      margin-bottom: 52px;
+      font-size: 24px;
+      line-height: 34px;
+      opacity: 0.8;
+    }
+
+    #tab2 .screen-one__text {
+      margin-bottom: 24px;
+    }
+
+    /*screen 2*/
+    .screen-two {
+      position: relative;
+      width: 100%;
+      max-width: 1278px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 58px;
+    }
+
+    .screen-two__content {
+      position: absolute;
+      top: 76px;
+      left: 36px;
+      width: 100%;
+      max-width: 360px;
+    }
+
+    #tab2 .screen-two__content {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      top: 46px;
+      left: 50%;
+      -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+      max-width: 670px;
+    }
+
+    .screen-two__logo {
+      margin-bottom: 11px;
+    }
+
+    .screen-two__title {
+      margin-bottom: 17px;
+      font-size: 40px;
+      line-height: 64px;
+      text-transform: capitalize;
+      color: #FFFFFF;
+    }
+
+    #tab2 .screen-two__title {
+      color: #FFFFFF;
+    }
+
+    .screen-two__rewards {
+      position: absolute;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      bottom: 64px;
+      left: 0;
+      width: 100%;
+      max-width: 326px;
+      padding: 29px 40px 30px 16px;
+      background-color: #F7F3EF;
+      border-radius: 0 80px 80px 0;
+    }
+
+    .screen-two__reward:not(:last-child) {
+      margin-right: 26px;
+    }
+
+    /*screen 3*/
+    .screen-three {
+      margin-bottom: 133px;
+    }
+
+    .screen-three__title {
+      font-weight: 600;
+      font-size: 50px;
+      line-height: 70px;
+      text-align: center;
+      text-transform: capitalize;
+      color: #1D1D1D;
+    }
+
+    .screen-three__items {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    .screen-three-item {
+      width: 100%;
+      max-width: 282px;
+      margin: 36px 40px 0 40px;
+      text-align: center;
+      color: #1D1D1D;
+    }
+
+    .screen-three-item__img {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .screen-three-item__title {
+      display: inline-block;
+      max-width: 195px;
+      margin-bottom: 12px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 21px;
+      text-transform: capitalize;
+    }
+
+    .screen-three-item__description {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    /*screen 4*/
+    .screen-four {
+      margin-bottom: 79px;
+      padding-top: 137px;
+      padding-bottom: 131px;
+      background-color: #F7F3EF;
+      overflow: hidden;
+    }
+
+    .screen-four__container {
+      position: relative;
+      width: 100%;
+      max-width: 1114px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .screen-four__media {
+      position: absolute;
+    }
+
+    .screen-four__media-one {
+      top: -80px;
+      right: 541px;
+    }
+
+    .screen-four__media-two {
+      top: -119px;
+      right: 541px;
+    }
+
+    .screen-four__media img {
+      max-width: none;
+    }
+
+    .screen-four__content {
+      width: 100%;
+      max-width: 472px;
+      margin-left: auto;
+    }
+
+    .screen-four__suptitle {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 30px;
+      text-transform: capitalize;
+      color: #151826;
+    }
+
+    .screen-four__title {
+      max-width: 446px;
+      margin-bottom: 18px;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 50px;
+      text-transform: capitalize;
+      color: #151826;
+    }
+
+    .screen-four__description {
+      font-size: 14px;
+      line-height: 20px;
+      color: #1D1D1D;
+    }
+
+    /*screen 5*/
+    .screen-five {
+      margin-bottom: 93px;
+    }
+
+    .screen-five__title {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 35px;
+      font-weight: 600;
+      font-size: 50px;
+      line-height: 50px;
+      text-align: center;
+      text-transform: capitalize;
+      color: #151826;
+    }
+
+    .screen-five__description {
+      max-width: 830px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px;
+      font-size: 18px;
+      line-height: 25px;
+      text-align: center;
+      color: #1D1D1D;
+    }
+
+    .screen-five__media {
+      position: relative;
+      width: 100%;
+      max-width: 1254px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .screen-five__media-poster{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9;
+    }
+    .screen-five__btn {
+      position: absolute;
+      top: 221px;
+      left: 50%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 266px;
+      height: 60px;
+      -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+      font-family: 'DomaineSansTextWeb-Bold', sans-serif;
+      font-size: 18px;
+      line-height: 34px;
+      letter-spacing: 1px;
+      text-transform: capitalize;
+      color: #FFFFFF;
+      border-radius: 60px;
+      background-color: #D29700;
+      z-index: 10;
+    }
+
+    .screen-five__btn-icon {
+      margin-right: 11px;
+    }
+
+    .screen-five__benefits {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    .screen-five-benefit {
+      position: relative;
+      width: 100%;
+      max-width: 320px;
+      margin: 42px 56px 0 56px;
+      text-align: center;
+      color: #333333;
+    }
+
+    .screen-five-benefit:not(:last-child):after {
+      content: "";
+      position: absolute;
+      top: 64px;
+      right: -56px;
+      height: 64px;
+      width: 1px;
+      background-color: #ECECEC;
+    }
+
+    .screen-five-benefit__icon {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 11px;
+      border: 1px solid #EFE7E1;
+      border-radius: 100%;
+    }
+
+    .screen-five-benefit__title {
+      margin-bottom: 6px;
+      font-family: 'DomaineSansTextWeb-Bold', sans-serif;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: uppercase;
+    }
+
+    .screen-five-benefit__description {
+      font-size: 15px;
+      line-height: 24px;
+    }
+
+    /*screen 6*/
+    .screen-six {
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1254px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .screen-six__media {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+    }
+
+    .screen-six__content {
+      width: 100%;
+      max-width: 521px;
+      padding: 100px 80px 99px 80px;
+      background-color: #5D667D;
+      color: #FFFFFF;
+      z-index: 2;
+    }
+
+    #tab2 .screen-six {
+      max-width: 1245px;
+    }
+
+    #tab2 .screen-six__content {
+      max-width: 464px;
+      padding: 100px 51px 99px 52px;
+    }
+
+    .screen-six__title {
+      max-width: 330px;
+      margin-bottom: 8px;
+      font-weight: 400;
+      font-size: 50px;
+      line-height: 60px;
+      letter-spacing: -0.05em;
+    }
+
+    .screen-six__text {
+      margin-bottom: 28px;
+      font-size: 18px;
+      line-height: 25px;
+      opacity: 0.8;
+    }
+
+    @media all and (max-width: 767px) {
+      .btn-regular {
+        width: 173px;
+        height: 40px;
+        padding: 5px 10px;
+        font-size: 16px;
+        line-height: 28px;
+      }
+
+      /*top*/
+      .landing {
+        padding: 29px 0;
+      }
+      .landing-top__logo{
+        width: 215px;
+        margin: 0 auto 23px auto;
+      }
+      .landing-top {
+        margin-bottom: 17px;
+      }
+
+      .landing-top__title {
+        margin-bottom: 16px;
+        padding: 0 15px;
+        font-size: 34px;
+        line-height: 41px;
+      }
+
+      .landing-top__title span {
+        display: block;
+      }
+
+      .landing-switch {
+        padding: 0 6px;
+      }
+
+      .landing-switch__item {
+        height: 40px;
+        font-size: 13px;
+        line-height: 16px;
+      }
+
+      .landing-switch__item:last-child {
+        min-width: 190px;
+      }
+
+      /*screen 1*/
+      .screen-one {
+        margin-bottom: 21px;
+      }
+
+      .screen-one__media {
+        position: static;
+      }
+
+      .screen-one__content {
+        max-width: none;
+        padding: 35px 26px 51px 26px;
+      }
+
+      #tab2 .screen-one__content {
+        padding: 54px 26px 60px 26px;
+      }
+
+      .screen-one__suptitle {
+        font-size: 12px;
+        line-height: 14px;
+      }
+
+      .screen-one__title {
+        margin-bottom: 21px;
+        font-size: 34px;
+        line-height: 41px;
+      }
+
+      .screen-one__text {
+        margin-bottom: 36px;
+        font-size: 18px;
+        line-height: 25px;
+      }
+
+      #tab2 .screen-one__text {
+        margin-bottom: 42px;
+      }
+
+      /*screen 2*/
+      .screen-two {
+        padding: 0 15px;
+        margin-bottom: 46px;
+      }
+
+      .screen-two__rewards {
+        top: 173px;
+        left: 15px;
+        bottom: auto;
+        width: 175px;
+        height: 68px;
+        padding: 15px 20px 15px 8px;
+      }
+
+      .screen-two__reward:not(:last-child) {
+        margin-right: 14px;
+      }
+
+      #tab2 .screen-two__content {
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        transform: translate(0, 0);
+      }
+
+      .screen-two__content {
+        position: static;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        max-width: none;
+        margin-top: 56px;
+      }
+
+      .screen-two__logo {
+        margin-bottom: 8px;
+      }
+
+      .screen-two__title {
+        margin-bottom: 15px;
+        font-size: 34px;
+        line-height: 42px;
+        text-align: center;
+        color: #1D1D1D;
+      }
+      #tab2 .screen-two__title{
+        color: #1D1D1D;
+      }
+
+      .screen-two picture img{
+        width: 100%;
+      }
+      /*screen 3*/
+      .screen-three {
+        margin-bottom: 0;
+      }
+
+      .screen-three__title {
+        margin-bottom: 26px;
+        font-size: 34px;
+        line-height: 39px;
+      }
+
+      .screen-three-item {
+        margin: 0 15px 56px 15px;
+      }
+
+      .screen-three-item__img,
+      .screen-three-item__title {
+        margin-bottom: 16px;
+      }
+
+      .screen-three-item__description {
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /*screen 4*/
+      .screen-four {
+        margin-bottom: 36px;
+        padding: 0 18px 72px 18px;
+      }
+
+      .screen-four__content {
+        margin-right: auto;
+      }
+
+      .screen-four__suptitle {
+        font-size: 12px;
+      }
+
+      .screen-four__title {
+        margin-bottom: 40px;
+        font-size: 24px;
+        line-height: 34px;
+      }
+
+      .screen-four__media {
+        position: static;
+        margin-left: -18px;
+      }
+
+      .screen-four__media-one {
+        margin-top: 14px;
+        margin-bottom: 38px;
+      }
+
+      .screen-four__media-two {
+        margin-top: 46px;
+        margin-bottom: 20px;
+      }
+
+      .screen-four__media img {
+        max-width: 100%;
+      }
+
+      /*screen 5*/
+      .screen-five {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin-bottom: 52px;
+      }
+
+      .screen-five__media {
+        -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+        order: -1;
+      }
+
+      /*.screen-five__btn {*/
+      /*  top: 71px;*/
+      /*  width: 197px;*/
+      /*  height: 40px;*/
+      /*}*/
+
+      .screen-five__title {
+        margin-top: 25px;
+        margin-bottom: 18px;
+        font-size: 24px;
+        line-height: 34px;
+      }
+
+      .screen-five__title span {
+        display: block;
+      }
+
+      .screen-five__description {
+        margin-bottom: 0;
+        padding: 0 26px;
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      .screen-five-benefit {
+        max-width: 372px;
+        margin: 34px 0 0 0;
+        padding: 0 26px;
+      }
+
+      .screen-five-benefit:not(:last-child):after {
+        display: none;
+      }
+
+      /*screen 6*/
+      .screen-six__media {
+        position: static;
+        -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+        order: -1;
+      }
+
+      #tab2 .screen-six__content,
+      .screen-six__content {
+        max-width: none;
+        padding: 52px 32px 44px 34px;
+      }
+
+      .screen-six__title {
+        margin-bottom: 36px;
+        font-size: 34px;
+        line-height: 41px;
+      }
+
+      .screen-six__text {
+        margin-bottom: 17px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="landing">
+
+  <div class="landing-top">
+    <div class="landing-top__logo"><img src="assets/img/dream/Logo.svg" alt="text"></div>
+    <h1 class="landing-top__title">Choose the right <span>Dreamcloud</span> for Better Sleep</h1>
+    <div class="landing-switch">
+      <a href="#tab1" class="landing-switch__item landing-switch__item_active">The DreamCloud</a>
+      <a href="#tab2" class="landing-switch__item">DreamCloud Premier</a>
+    </div>
+  </div>
+  <div class="landing-tabs">
+    <div class="landing-tabs__item landing-tabs__item_active" id="tab1">
+
+      <div class="screen-one">
+        <div class="screen-one__media"><img src="assets/img/dream/tab-1/screen-1.jpg" alt="text"></div>
+        <div class="screen-one__content">
+          <h4 class="screen-one__suptitle">MOST POPULAR</h4>
+          <h3 class="screen-one__title">The DreamCloud</h3>
+          <p class="screen-one__text">Ultimate support and comfort of memory foam and individually pocketed innerspring
+            coils. With a quilted cashmere blend on top.
+          </p>
+          <a href="#" class="btn-regular">Shop Now</a>
+        </div>
+      </div>
+      <div class="screen-two">
+        <picture>
+          <source media="(max-width:767px)" srcset="assets/img/dream/tab-1/screen-2-m.jpg">
+          <img src="assets/img/dream/tab-1/screen-2.jpg" alt="text">
+        </picture>
+        <div class="screen-two__content">
+          <div class="screen-two__logo">
+            <picture>
+              <source media="(max-width:767px)" srcset="assets/img/dream/tab-2/screen-2-logo.svg">
+              <img src="assets/img/dream/tab-1/screen-2-logo.svg" alt="text">
+            </picture>
+          </div>
+          <div class="screen-two__title">Award-Winning Hybrid Mattress</div>
+          <a href="#" class="btn-regular">Shop Now</a>
+        </div>
+        <div class="screen-two__rewards">
+          <div class="screen-two__reward"><img src="assets/img/dream/tab-1/screen-2-reward-1.svg" alt="text"></div>
+          <div class="screen-two__reward"><img src="assets/img/dream/tab-1/screen-2-reward-2.svg" alt="text"></div>
+          <div class="screen-two__reward"><img src="assets/img/dream/tab-1/screen-2-reward-3.svg" alt="text"></div>
+        </div>
+      </div>
+      <div class="screen-three">
+        <h2 class="screen-three__title">Why Dreamcloud?</h2>
+        <div class="screen-three__items">
+          <div class="screen-three-item">
+            <div class="screen-three-item__img"><img src="assets/img/dream/tab-1/screen-3-1.jpg" alt="text"></div>
+            <h4 class="screen-three-item__title">Premium materials at half the price.</h4>
+            <p class="screen-three-item__description">DreamCloud’s stay-put technology means you won’t feel a thing
+              when your partner rolls over. Individually wrapped coils mean vibrations don’t travel. And the supportive
+              foam layer drastically reduces feeling any movements.</p>
+          </div>
+          <div class="screen-three-item">
+            <div class="screen-three-item__img"><img src="assets/img/dream/tab-1/screen-3-2.jpg" alt="text"></div>
+            <h4 class="screen-three-item__title">DreamCloud’s “perfect” firmness.</h4>
+            <p class="screen-three-item__description">If you appreciate a firm mattress and your partner prefers a soft
+              one, here’s your ticket to compromise. DreamCloud Hybrid Mattress gives you contouring comfort and
+              pushback support so you both wake up happy.</p>
+          </div>
+          <div class="screen-three-item">
+            <div class="screen-three-item__img"><img src="assets/img/dream/tab-1/screen-3-3.jpg" alt="text"></div>
+            <h4 class="screen-three-item__title">Make your day’s first sigh a happy one. </h4>
+            <p class="screen-three-item__description">Fall asleep faster and wake up easier with high-density gel
+              memory foam that relieves your pressure points. And let the gel memory foam diagnose where you need
+              support the most, so you wake up a happy version of yourself.</p>
+          </div>
+        </div>
+      </div>
+      <div class="screen-four">
+        <div class="screen-four__container">
+          <div class="screen-four__media screen-four__media-one">
+            <picture>
+              <source media="(max-width:767px)" srcset="assets/img/dream/tab-1/screen-4-m.png">
+              <img src="assets/img/dream/tab-1/screen-4.png" alt="text">
+            </picture>
+          </div>
+          <div class="screen-four__content">
+            <div class="screen-four__suptitle">What makes a good day?</div>
+            <div class="screen-four__title">That’s the question DreamCloud Hybrid Mattress started with. Then we created
+              the answer.
+            </div>
+            <div class="screen-four__description">A good day starts with a good night’s sleep. Individually wrapped
+              coils
+              support your unique body shape and sleeping style. Luxury-level foam transports you deep into the depths
+              of
+              dreamland. And you wake up like you don’t need your dark roast.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screen-five">
+        <h2 class="screen-five__title"><span>Sleepers with aches</span> <span>and soreness</span>
+          <span>wake up happy</span> on DreamCloud.</h2>
+        <p class="screen-five__description">Whether you sleep on your side, back or awkwardly wedged between your cat
+          and partner, individually wrapped coils adapt to your sleep shape. Gel memory foam cradles your shoulders,
+          hips and problem areas by gently contouring to your body. Thanks to the cashmere top and luxe comfort layers,
+          you sleep through it all.</p>
+        <div class="screen-five__media">
+<!--          <img src="assets/img/tab-1/screen-5.jpg" alt="text" class="screen-five__media-poster">-->
+          <div style="padding:56.25% 0 0 0;position:relative;">
+            <iframe src="https://player.vimeo.com/video/436975412" frameborder="0"
+                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                    title="[DC] 20.07.09 DreamCloud Home Page" data-ready="true"></iframe>
+          </div>
+<!--          <a href="#" class="screen-five__btn">-->
+<!--            <span class="screen-five__btn-icon">-->
+<!--             <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--              <path d="M23 13L0.5 0.00961876V25.9904L23 13Z" fill="white"/>-->
+<!--             </svg>-->
+<!--            </span>-->
+<!--            <span>Watch Video</span>-->
+<!--          </a>-->
+        </div>
+        <div class="screen-five__benefits">
+          <div class="screen-five-benefit">
+            <div class="screen-five-benefit__icon">
+              <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M7.88526 15.586L21.0268 2.44444L19.1683 0.585938L7.88505 11.8692L1.8585 5.84265L0 7.70115L7.88494 15.5861L7.88515 15.5859L7.88526 15.586Z"
+                      fill="#CAA45D"/>
+              </svg>
+            </div>
+            <div class="screen-five-benefit__title">Cashmere-Blend Cover</div>
+            <div class="screen-five-benefit__description">A built-in pillow top offers the perfect combination of
+              softness and breathability.
+            </div>
+          </div>
+          <div class="screen-five-benefit">
+            <div class="screen-five-benefit__icon">
+              <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M7.88526 15.586L21.0268 2.44444L19.1683 0.585938L7.88505 11.8692L1.8585 5.84265L0 7.70115L7.88494 15.5861L7.88515 15.5859L7.88526 15.586Z"
+                      fill="#CAA45D"/>
+              </svg>
+            </div>
+            <div class="screen-five-benefit__title">HIGH-DENSITY MEMORY FOAM</div>
+            <div class="screen-five-benefit__description">Multiple layers combine to support every sleep position.</div>
+          </div>
+          <div class="screen-five-benefit">
+            <div class="screen-five-benefit__icon">
+              <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M7.88526 15.586L21.0268 2.44444L19.1683 0.585938L7.88505 11.8692L1.8585 5.84265L0 7.70115L7.88494 15.5861L7.88515 15.5859L7.88526 15.586Z"
+                      fill="#CAA45D"/>
+              </svg>
+            </div>
+            <div class="screen-five-benefit__title">Innerspring Coils with Edge Support</div>
+            <div class="screen-five-benefit__description">Our pocketed innerspring coil unit provides enhanced edge
+              support with thicker coils on the perimeter.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screen-six">
+        <div class="screen-six__content">
+          <h3 class="screen-six__title">The Very Best in Comfort and Support</h3>
+          <p class="screen-six__text">DreamCloud Hybrid Mattress provides ideal support for all positions. We
+            hand-selected and tested each and every material to find what we are confident is the best of the best.
+          </p>
+          <a href="#" class="btn-regular">Shop Now</a>
+        </div>
+        <div class="screen-six__media"><img src="assets/img/dream/tab-1/screen-6.jpg" alt="text"></div>
+      </div>
+
+    </div>
+    <div class="landing-tabs__item" id="tab2">
+
+      <div class="screen-one">
+        <div class="screen-one__media"><img src="assets/img/dream/tab-2/screen-1.jpg" alt="text"></div>
+        <div class="screen-one__content">
+          <h3 class="screen-one__title">DreamCloud Premier</h3>
+          <p class="screen-one__text">Luxury comfort with 1 extra inch of memory foam, 3X more cashmere and the same
+            innerspring coil system for support.
+          </p>
+          <a href="#" class="btn-regular">Shop Now</a>
+        </div>
+      </div>
+      <div class="screen-two">
+        <picture>
+          <source media="(max-width:767px)" srcset="assets/img/dream/tab-2/screen-2-m.jpg">
+          <img src="assets/img/dream/tab-2/screen-2.jpg" alt="text">
+        </picture>
+        <div class="screen-two__content">
+          <div class="screen-two__logo">
+            <picture>
+              <source media="(max-width:767px)" srcset="assets/img/dream/tab-2/screen-2-logo-m.svg">
+              <img src="assets/img/dream/tab-1/screen-2-logo.svg" alt="text">
+            </picture>
+          </div>
+          <div class="screen-two__title">Award-Winning Hybrid Mattress</div>
+          <a href="#" class="btn-regular">Shop Now</a>
+        </div>
+        <div class="screen-two__rewards">
+          <div class="screen-two__reward"><img src="assets/img/dream/tab-1/screen-2-reward-1.svg" alt="text"></div>
+          <div class="screen-two__reward"><img src="assets/img/dream/tab-1/screen-2-reward-2.svg" alt="text"></div>
+          <div class="screen-two__reward"><img src="assets/img/dream/tab-1/screen-2-reward-3.svg" alt="text"></div>
+        </div>
+      </div>
+      <div class="screen-three">
+        <h2 class="screen-three__title">Why Dreamcloud?</h2>
+        <div class="screen-three__items">
+          <div class="screen-three-item">
+            <div class="screen-three-item__img"><img src="assets/img/dream/tab-2/screen-3-1.jpg" alt="text"></div>
+            <h4 class="screen-three-item__title">Premium materials at half the price.</h4>
+            <p class="screen-three-item__description">DreamCloud’s stay-put technology means you won’t feel a thing
+              when your partner rolls over. Individually wrapped coils mean vibrations don’t travel. And the supportive
+              foam layer drastically reduces feeling any movements.</p>
+          </div>
+          <div class="screen-three-item">
+            <div class="screen-three-item__img"><img src="assets/img/dream/tab-1/screen-3-2.jpg" alt="text"></div>
+            <h4 class="screen-three-item__title">DreamCloud’s “perfect” firmness.</h4>
+            <p class="screen-three-item__description">If you appreciate a firm mattress and your partner prefers a soft
+              one, here’s your ticket to compromise. DreamCloud Hybrid Mattress gives you contouring comfort and
+              pushback support so you both wake up happy.</p>
+          </div>
+          <div class="screen-three-item">
+            <div class="screen-three-item__img"><img src="assets/img/dream/tab-1/screen-3-3.jpg" alt="text"></div>
+            <h4 class="screen-three-item__title">Make your day’s first sigh a happy one. </h4>
+            <p class="screen-three-item__description">Fall asleep faster and wake up easier with high-density gel
+              memory foam that relieves your pressure points. And let the gel memory foam diagnose where you need
+              support the most, so you wake up a happy version of yourself.</p>
+          </div>
+        </div>
+      </div>
+      <div class="screen-four">
+        <div class="screen-four__container">
+          <div class="screen-four__media screen-four__media-two">
+            <picture>
+              <source media="(max-width:767px)" srcset="assets/img/dream/tab-2/screen-4-m.png">
+              <img src="assets/img/dream/tab-2/screen-4.png" alt="text">
+            </picture>
+          </div>
+          <div class="screen-four__content">
+            <div class="screen-four__suptitle">What makes a good day?</div>
+            <div class="screen-four__title">That’s the question DreamCloud Hybrid Mattress started with. Then we created
+              the answer.
+            </div>
+            <div class="screen-four__description">A good day starts with a good night’s sleep. Individually wrapped
+              coils
+              support your unique body shape and sleeping style. Luxury-level foam transports you deep into the depths
+              of
+              dreamland. And you wake up like you don’t need your dark roast.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screen-five">
+        <h2 class="screen-five__title"><span>Sleepers with aches</span> <span>and soreness</span>
+          <span>wake up happy</span> on DreamCloud.</h2>
+        <p class="screen-five__description">Whether you sleep on your side, back or awkwardly wedged between your cat
+          and partner, individually wrapped coils adapt to your sleep shape. Gel memory foam cradles your shoulders,
+          hips and problem areas by gently contouring to your body. Thanks to the cashmere top and luxe comfort layers,
+          you sleep through it all.</p>
+        <div class="screen-five__media">
+<!--          <img src="assets/img/tab-2/screen-5.jpg" alt="text" class="screen-five__media-poster">-->
+          <div style="padding:56.25% 0 0 0;position:relative;">
+            <iframe src="https://player.vimeo.com/video/383783172" frameborder="0"
+                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                    title="[DC] 20.07.09 DreamCloud Home Page" data-ready="true"></iframe>
+          </div>
+<!--          <a href="#" class="screen-five__btn">-->
+<!--            <span class="screen-five__btn-icon">-->
+<!--             <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--              <path d="M23 13L0.5 0.00961876V25.9904L23 13Z" fill="white"/>-->
+<!--             </svg>-->
+<!--            </span>-->
+<!--            <span>Watch Video</span>-->
+<!--          </a>-->
+        </div>
+        <div class="screen-five__benefits">
+          <div class="screen-five-benefit">
+            <div class="screen-five-benefit__icon">
+              <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M7.88526 15.586L21.0268 2.44444L19.1683 0.585938L7.88505 11.8692L1.8585 5.84265L0 7.70115L7.88494 15.5861L7.88515 15.5859L7.88526 15.586Z"
+                      fill="#CAA45D"/>
+              </svg>
+            </div>
+            <div class="screen-five-benefit__title">Cashmere-Blend Cover</div>
+            <div class="screen-five-benefit__description">A built-in pillow top offers the perfect combination of
+              softness and breathability.
+            </div>
+          </div>
+          <div class="screen-five-benefit">
+            <div class="screen-five-benefit__icon">
+              <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M7.88526 15.586L21.0268 2.44444L19.1683 0.585938L7.88505 11.8692L1.8585 5.84265L0 7.70115L7.88494 15.5861L7.88515 15.5859L7.88526 15.586Z"
+                      fill="#CAA45D"/>
+              </svg>
+            </div>
+            <div class="screen-five-benefit__title">HIGH-DENSITY MEMORY FOAM</div>
+            <div class="screen-five-benefit__description">Multiple layers combine to support every sleep position.</div>
+          </div>
+          <div class="screen-five-benefit">
+            <div class="screen-five-benefit__icon">
+              <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M7.88526 15.586L21.0268 2.44444L19.1683 0.585938L7.88505 11.8692L1.8585 5.84265L0 7.70115L7.88494 15.5861L7.88515 15.5859L7.88526 15.586Z"
+                      fill="#CAA45D"/>
+              </svg>
+            </div>
+            <div class="screen-five-benefit__title">Innerspring Coils with Edge Support</div>
+            <div class="screen-five-benefit__description">Our pocketed innerspring coil unit provides enhanced edge
+              support with thicker coils on the perimeter.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screen-six">
+        <div class="screen-six__content">
+          <h3 class="screen-six__title">The Very Best in Comfort and Support</h3>
+          <p class="screen-six__text">DreamCloud Hybrid Mattress provides ideal support for all positions. We
+            hand-selected and tested each and every material to find what we are confident is the best of the best.
+          </p>
+          <a href="#" class="btn-regular">Shop Now</a>
+        </div>
+        <div class="screen-six__media"><img src="assets/img/dream/tab-2/screen-6.jpg" alt="text"></div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function () {
+    // tabs switching
+    $('.landing-switch__item').click(function (e) {
+      e.preventDefault();
+      var tabName = $(this).attr('href');
+      $('.landing-switch__item').removeClass('landing-switch__item_active');
+      $(this).addClass('landing-switch__item_active');
+      $('.landing-tabs__item').removeClass('landing-tabs__item_active');
+      $('.landing-tabs__item' + tabName).addClass('landing-tabs__item_active');
+    });
+    // video
+    $('.screen-five__btn').click(function (e) {
+      e.preventDefault();
+      $(this).hide();
+      $(this).closest('.screen-five__media').find('.screen-five__media-poster').hide();
+    });
+  });
+</script>
+</body>
+</html>

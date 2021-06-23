@@ -1,0 +1,975 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nectar</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Biotif';
+      src: url('assets/fonts/Biotif-Regular.ttf');
+    }
+    @font-face {
+      font-family: 'Biotif-Bold';
+      src: url('assets/fonts/Biotif-Bold.ttf');
+    }
+    @font-face {
+      font-family: 'Biotif-SemiBold';
+      src: url('assets/fonts/Biotif-SemiBold.ttf');
+    }
+    @font-face {
+      font-family: 'Biotif-Medium';
+      src: url('assets/fonts/Biotif-Medium.ttf');
+    }
+    @font-face {
+      font-family: 'DomaineSansTextWeb-Regular';
+      src: url('assets/fonts/DomaineSansTextWeb-Regular.eot'); /* IE9 Compat Modes */
+      src: url('assets/fonts/DomaineSansTextWeb-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('assets/fonts/DomaineSansTextWeb-Regular.woff2') format('woff2'), /* Super Modern Browsers */ url('assets/fonts/DomaineSansTextWeb-Regular.woff') format('woff') /* Pretty Modern Browsers */
+    }
+    @font-face {
+      font-family: 'DomaineSansTextWeb-Bold';
+      src: url('assets/fonts/DomaineSansTextWeb-Bold.eot'); /* IE9 Compat Modes */
+      src: url('assets/fonts/DomaineSansTextWeb-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('assets/fonts/DomaineSansTextWeb-Bold.woff2') format('woff2'), /* Super Modern Browsers */ url('assets/fonts/DomaineSansTextWeb-Bold.woff') format('woff') /* Pretty Modern Browsers */
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    *, *:after, *:before {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      margin: 0;
+    }
+    .landing{
+      font-family: 'Biotif', sans-serif;
+      font-weight: 400;
+    }
+    .landing h1, .landing h2, .landing h3, .landing h4, .landing h5, .landing h6{
+      font-family: 'Biotif-SemiBold',sans-serif;
+      color: inherit;
+    }
+    .landing h1{
+      font-size: 50px;
+      line-height: 64px;
+      text-align: center;
+      text-transform: capitalize;
+      color: #1D1D1D;
+    }
+    .landing h2{
+      font-size: 60px;
+      line-height: 70px;
+      text-transform: capitalize;
+      color: #151826;
+    }
+    .landing a, .landing button {
+      outline: none;
+      text-decoration: none;
+      -webkit-transition: all 0.25s;
+      -o-transition: all 0.25s;
+      transition: all 0.25s;
+    }
+    .landing a:hover,
+    .landing a:focus,
+    .landing a:active {
+      text-decoration: none;
+    }
+    .landing img, .landing svg {
+      display: block;
+      max-width: 100%;
+    }
+    .btn{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 226px;
+      height: 60px;
+      padding: 13px 20px;
+      border-radius: 60px;
+      font-size: 18px;
+      line-height: 34px;
+      letter-spacing: 1px;
+    }
+    .btn svg{
+      margin-right: 10px;
+    }
+    .btn-regular {
+      background-color: #6677CC;
+      color: #FFFFFF;
+    }
+    .tac{
+      text-align: center;
+    }
+    .text-regular{
+      font-size: 16px;
+      line-height: 30px;
+      color: #616577;
+    }
+    .text-regular-m{
+      font-size: 18px;
+      line-height: 30px;
+      color: #616577;
+    }
+
+    /*top*/
+    .landing {
+      padding: 72px 15px;
+    }
+    .landing-top {
+      margin-bottom: 66px;
+    }
+    .landing-top__logo{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 66px;
+    }
+    .landing-top__title {
+      margin-bottom: 40px;
+    }
+    .landing-switch {
+      display: flex;
+      justify-content: center;
+    }
+    .landing-switch__item{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 364px;
+      height: 60px;
+      border: 1px solid #6677CC;
+      font-family: 'Biotif-Bold', sans-serif;
+      font-size: 20px;
+      line-height: 24px;
+      text-transform: uppercase;
+      color: #6677CC;
+    }
+    .landing-switch__item:first-child {
+      border-radius: 60px 0 0 60px;
+    }
+    .landing-switch__item:last-child {
+      border-radius: 0 60px 60px 0;
+    }
+    .landing-switch__item:hover,
+    .landing-switch__item:active,
+    .landing-switch__item_active {
+      background-color: #6677CC;
+      color: #FFFFFF;
+    }
+
+    /*tabs*/
+    .landing-tabs__item {
+      display: none;
+    }
+    .landing-tabs__item_active {
+      display: block;
+    }
+
+    /*screen 1*/
+    .screen-one {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto 43px auto;
+    }
+    .screen-one__content{
+      width: 100%;
+      max-width: 495px;
+    }
+    .screen-one__media{
+      max-width: 680px;
+    }
+    .screen-one__decription{
+      margin-top: 18px;
+      margin-bottom: 14px;
+    }
+
+    /*screen 2*/
+    .screen-two{
+      display: flex;
+      justify-content: center;
+    }
+    .screen-two__container{
+      position: relative;
+    }
+    .screen-two__box{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      max-width: 450px;
+      padding: 62px 60px 67px 60px;
+      background-color: #6677CC;
+      border-top-right-radius: 100px;
+    }
+    .screen-two__logo{
+      margin: 0 10px;
+    }
+    .screen-two h2{
+      margin-top: 7px;
+      margin-bottom: 36px;
+      color: #FFFFFF;
+    }
+    .screen-two__btn{
+      background-color: #001780;
+      color: #FFFFFF;
+    }
+    .screen-two__reward{
+      position: absolute;
+      top: 0;
+      right: 184px;
+      padding: 19px 22px 22px 22px;
+      background-color: #fff;
+      border-bottom-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+    }
+    .screen-two__reward-item:not(:last-child){
+      margin-bottom: 20px;
+    }
+
+    /*screen 3*/
+    .screen-three{
+      padding-top: 57px;
+    }
+    .screen-three__items{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .screen-three-item{
+      width: 100%;
+      max-width: 310px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 24px 49px 0 49px;
+    }
+    .screen-three-item__title{
+      display: flex;
+      align-items: center;
+      min-height: 54px;
+      margin-top: 9px;
+      margin-bottom: 5px;
+      font-family: 'Biotif-Bold', sans-serif;
+      font-size: 20px;
+      line-height: 27px;
+      text-align: center;
+      text-transform: capitalize;
+      color: #151826;
+    }
+
+    /*screen 4*/
+    .screen-four{
+      margin-top: 390px;
+      padding: 72px 0 119px 0;
+      background-color: #F8F8F8;
+    }
+    .screen-four__content{
+      position: relative;
+      width: 100%;
+      max-width: 1134px;
+      margin: 0 auto;
+    }
+    .screen-four__media{
+      position: absolute;
+      bottom: -20px;
+      right: 555px;
+    }
+    .screen-four__media img{
+      max-width: none;
+    }
+    .screen-four__box{
+      width: 100%;
+      max-width: 495px;
+      margin-left: auto;
+    }
+    .screen-four__description{
+      margin-top: 32px;
+      margin-bottom: 35px;
+    }
+
+    /*screen 5*/
+    .screen-five{
+      padding-top: 110px;
+    }
+    .screen-five__title{
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .screen-five__description{
+      margin-top: 30px;
+      margin-bottom: 56px;
+      font-size: 24px;
+      line-height: 30px;
+      color: #616577;
+    }
+    .screen-five__container{
+      display: flex;
+      justify-content: center;
+    }
+    .screen-five__media{
+      position: relative;
+    }
+    .screen-five__play{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    /*screen 6*/
+    .screen-six{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-bottom: 72px;
+    }
+    .screen-six-item{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 412px;
+      margin: 55px 9px 0 9px;
+      padding: 67px 30px 71px 30px;
+      background-color: #F8F8F8;
+    }
+    .screen-six-item__icon{
+      height: 66px;
+      display: flex;
+      align-items: center;
+    }
+    .screen-six-item__title{
+      margin: 30px 0;
+      font-family: 'Biotif-Bold', sans-serif;
+      font-size: 20px;
+      line-height: 27px;
+      text-transform: capitalize;
+      color: #151826;
+    }
+
+    /*screen 7*/
+    .screen-seven{
+      display: flex;
+      width: 100%;
+      max-width: 1276px;
+      margin: 0 auto;
+    }
+    .screen-seven__box{
+      width: 100%;
+      max-width: 437px;
+      margin-top: 66px;
+      margin-left: -126px;
+    }
+    .screen-seven h2{
+      margin-bottom: 14px;
+    }
+
+
+    @media all and (max-width: 767px) {
+
+      .landing{
+        padding: 34px 15px;
+      }
+      .landing-top{
+        margin-bottom: 26px;
+      }
+      .landing-top__logo{
+        margin-bottom: 44px;
+      }
+      .landing h1{
+        font-size: 28px;
+        line-height: 34px;
+      }
+      .landing h2{
+        font-size: 34px;
+        line-height: 42px;
+      }
+      .landing h2 span{
+        display: block;
+      }
+      .landing-top__title{
+        margin-bottom: 26px;
+      }
+      .landing-switch__item{
+        width: auto;
+        padding: 0 14px;
+        font-size: 13px;
+        line-height: 16px;
+      }
+      .text-regular{
+        font-size: 14px;
+      }
+      .btn{
+        width: 167px;
+        height: 40px;
+        font-size: 16px;
+        line-height: 34px;
+      }
+      /*screen 1*/
+      .screen-one{
+        flex-direction: column;
+        margin-bottom: 62px;
+      }
+      .screen-one__media{
+        order: -1;
+        margin-bottom: 20px;
+      }
+      .screen-one__decription{
+        margin-top: 9px;
+        margin-bottom: 13px;
+      }
+      /*screen 2*/
+      .screen-two__box{
+        position: static;
+        padding: 37px 20px;
+        border-top-right-radius: 0;
+      }
+      .screen-two__reward-item{
+        width: 28px;
+      }
+      .screen-two__reward-item:not(:last-child){
+        margin-bottom: 8px;
+      }
+      .screen-two__reward{
+        right: 44px;
+        padding: 8px;
+      }
+      .screen-two__logo{
+        width: 98px;
+        margin: 0;
+      }
+      .screen-two h2{
+        margin-top: 13px;
+        margin-bottom: 10px;
+      }
+      /*screen 3*/
+      .screen-three{
+        padding-top: 26px;
+      }
+      .screen-three-item{
+        margin: 30px auto 0 auto;
+      }
+      .screen-three-item__title{
+        min-height: auto;
+      }
+      .screen-three-item .text-regular{
+        font-size: 16px;
+      }
+      /*screen 4*/
+      .screen-four{
+        margin-top: 180px;
+        margin-left: -15px;
+        margin-right: -15px;
+        padding: 298px 40px 53px 40px;
+      }
+      .screen-four__media{
+        bottom: 100%;
+        right: 40px;
+        margin-bottom: 20px;
+      }
+      /*screen 5*/
+      .screen-five{
+        padding-top: 32px;
+      }
+      .screen-five__title{
+        max-width: 300px;
+      }
+      .screen-five__description {
+        margin-top: 9px;
+        margin-bottom: 32px;
+        color: #616577;
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .screen-five__play{
+        width: 191px;
+      }
+      .screen-five__play svg{
+        width: 21px;
+        height: 21px;
+      }
+      /*screen 6*/
+      .screen-six{
+        padding-top: 23px;
+        padding-bottom: 20px;
+      }
+      .screen-six-item{
+        margin: 13px 0 0 0;
+        padding: 30px 45px;
+      }
+      .screen-six-item__icon{
+        height: auto;
+      }
+      .screen-six-item .text-regular{
+        font-size: 16px;
+      }
+      /*screen 7*/
+      .screen-seven{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .screen-seven__box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 254px;
+        margin-left: 0;
+        margin-top: 13px;
+      }
+      .screen-seven h2{
+        margin-bottom: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="landing">
+
+  <div class="landing-top">
+    <a href="#" class="landing-top__logo"><img src="assets/img/nectar/logo.svg" alt="text"></a>
+    <h1 class="landing-top__title">Choose the right Nectar for Better Sleep</h1>
+    <div class="landing-switch">
+      <a href="#tab1" class="landing-switch__item landing-switch__item_active">The nectar</a>
+      <a href="#tab2" class="landing-switch__item">The nectar premier</a>
+      <a href="#tab3" class="landing-switch__item">The nectar premier Copper</a>
+    </div>
+  </div>
+  <div class="landing-tabs">
+    <div class="landing-tabs__item landing-tabs__item_active" id="tab1">
+
+      <div class="screen-one">
+        <div class="screen-one__content">
+          <h2><span>Best Mattress.</span> <span>Best Value.</span> <span>Best Memory Foam.</span></h2>
+          <p class="screen-one__decription text-regular-m">Fall asleep on your Nectar with a happy sigh and wake up with
+            a “let’s go!”.
+            Gel-infused memory foam gently hugs you asleep. A cool-to-the-touch cover helps keep temps in check. And a
+            dynamic support layer holds your back and lets your muscles relax.</p>
+          <a href="#" class="btn btn-regular">Shop Now</a>
+        </div>
+        <div class="screen-one__media"><img src="assets/img/nectar/tab-1/screen-1.jpg" alt="text"></div>
+      </div>
+
+      <div class="screen-two">
+        <div class="screen-two__container">
+          <img src="assets/img/nectar/tab-1/screen-2.jpg" alt="text">
+          <div class="screen-two__box">
+            <div class="screen-two__logo"><img src="assets/img/nectar/screen-2-logo.svg" alt="text"></div>
+            <h2>Award-Winning Comfort</h2>
+            <a href="#" class="btn screen-two__btn">Shop Now</a>
+          </div>
+          <div class="screen-two__reward">
+            <div class="screen-two__reward-item"><img src="assets/img/nectar/screen-2-reward-1.svg" alt="text">
+            </div>
+            <div class="screen-two__reward-item"><img src="assets/img/nectar/screen-2-reward-2.svg" alt="text">
+            </div>
+            <div class="screen-two__reward-item"><img src="assets/img/nectar/screen-2-reward-3.svg" alt="text">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-three tac">
+        <h2>Why Nectar?</h2>
+        <div class="screen-three__items">
+          <div class="screen-three-item">
+            <div class="screen-three-item__img"><img src="assets/img/nectar/tab-1/screen-3-1.jpg" alt="text"></div>
+            <div class="screen-three-item__title">Ultimate Comfort<br> For Every Sleeper</div>
+            <div class="text-regular">How is that possible, you wonder? Nectar's memory foam mattress
+              layers have the ideal ratio of softness, firmness, and support most people want. It's a delicate balance,
+              but we got it right.
+            </div>
+          </div>
+          <div class="screen-three-item">
+            <div class="screen-three-item__img"><img src="assets/img/nectar/tab-1/screen-3-2.jpg" alt="text"></div>
+            <div class="screen-three-item__title">How Does Nectar Feel?</div>
+            <div class="text-regular">We describe the feel of Nectar as a medium-firm memory foam
+              mattress. That’s right in the middle of the firmness scale, where you get the most comfort and support.
+              And the best sleep.
+            </div>
+          </div>
+          <div class="screen-three-item">
+            <div class="screen-three-item__img"><img src="assets/img/nectar/tab-1/screen-3-3.jpg" alt="text"></div>
+            <div class="screen-three-item__title">Under Pressure?</div>
+            <div class="text-regular">Not on a Nectar. Our adaptive memory foam layer is designed to
+              help relieve common pressure points beneath your shoulders, hips, and legs for better spinal alignment on
+              any body type.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-four">
+        <div class="screen-four__content">
+          <div class="screen-four__media">
+            <picture>
+              <source media="(max-width:767px)" srcset="assets/img/nectar/tab-1/screen-4-m.png">
+              <img src="assets/img/nectar/tab-1/screen-4.png" alt="text">
+            </picture>
+          </div>
+          <div class="screen-four__box">
+            <h2>It’s like sleeping on a cloud</h2>
+            <p class="text-regular-m screen-four__description">We've taken the recent advances in mattress and fabric
+              technology and run with them. Having figured out the optimal levels of firmness, coolness, breathability,
+              and comfort - we put them all into one mattress, making it
+              the best mattress you've ever slept on. Period.</p>
+            <a href="#" class="btn btn-regular">Shop Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-five tac">
+        <h2 class="screen-five__title">Unboxing the Nectar Memory Foam Mattress</h2>
+        <p class="screen-five__description">See how easy it is to order and receive a Nectar mattress.</p>
+        <div class="screen-five__container">
+          <div class="screen-five__media">
+            <img src="assets/img/nectar/tab-1/screen-5.jpg" alt="text">
+            <a href="#" class="btn btn-regular screen-five__play">
+              <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23 13L0.5 0.00961876V25.9904L23 13Z" fill="white"/>
+              </svg>
+              <span>Watch Video</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-six tac">
+        <div class="screen-six-item">
+          <div class="screen-six-item__icon"><img src="assets/img/nectar/screen-6-1.svg" alt="text"></div>
+          <div class="screen-six-item__title">Tencel Cooling Cover</div>
+          <div class="text-regular">Nectar’s Cooling Cover with Tencel™ is moisture-wicking, more breathable, and softer
+            than standard cotton covers
+          </div>
+        </div>
+        <div class="screen-six-item">
+          <div class="screen-six-item__icon"><img src="assets/img/nectar/screen-6-2.svg" alt="text"></div>
+          <div class="screen-six-item__title">Gel Memory Foam</div>
+          <div class="text-regular">A cushioning layer of memory foam helps Nectar contour to the areas of your body
+            that need it the most.
+          </div>
+        </div>
+        <div class="screen-six-item">
+          <div class="screen-six-item__icon"><img src="assets/img/nectar/screen-6-3.svg" alt="text"></div>
+          <div class="screen-six-item__title">Wake up rested</div>
+          <div class="text-regular">Whether you’re a back, side or front sleeper, Nectar molds to your body, providing
+            ultimate support.
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-seven">
+        <div class="screen-seven__media"><img src="assets/img/nectar/screen-7.jpg" alt="text"></div>
+        <div class="screen-seven__box">
+          <h2>Are You ready to enjoy Your Best Sleep? </h2>
+          <a href="#" class="btn btn-regular">Shop Now</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="landing-tabs__item" id="tab2">
+
+      <div class="screen-one">
+        <div class="screen-one__content">
+          <h2><span>Best Mattress.</span> <span>Best Value.</span> <span>Best Memory Foam.</span></h2>
+          <p class="screen-one__decription text-regular-m">Fall asleep on your Nectar with a happy sigh and wake up with
+            a “let’s go!”.
+            Gel-infused memory foam gently hugs you asleep. A cool-to-the-touch cover helps keep temps in check. And a
+            dynamic support layer holds your back and lets your muscles relax.</p>
+          <a href="#" class="btn btn-regular">Shop Now</a>
+        </div>
+        <div class="screen-one__media"><img src="assets/img/nectar/tab-2/screen-1.jpg" alt="text"></div>
+      </div>
+
+      <div class="screen-two">
+        <div class="screen-two__container">
+          <img src="assets/img/nectar/tab-2/screen-2.jpg" alt="text">
+          <div class="screen-two__box">
+            <div class="screen-two__logo"><img src="assets/img/nectar/screen-2-logo.svg" alt="text"></div>
+            <h2>Award-Winning Comfort</h2>
+            <a href="#" class="btn screen-two__btn">Shop Now</a>
+          </div>
+          <div class="screen-two__reward">
+            <div class="screen-two__reward-item"><img src="assets/img/nectar/screen-2-reward-1.svg" alt="text">
+            </div>
+            <div class="screen-two__reward-item"><img src="assets/img/nectar/screen-2-reward-2.svg" alt="text">
+            </div>
+            <div class="screen-two__reward-item"><img src="assets/img/nectar/screen-2-reward-3.svg" alt="text">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-three tac">
+        <h2>Why Nectar?</h2>
+        <div class="screen-three__items">
+          <div class="screen-three-item">
+            <div class="screen-three-item__img"><img src="assets/img/nectar/tab-2/screen-3-1.jpg" alt="text"></div>
+            <div class="screen-three-item__title">Ultimate Comfort<br> For Every Sleeper</div>
+            <div class="text-regular">How is that possible, you wonder? Nectar's memory foam mattress
+              layers have the ideal ratio of softness, firmness, and support most people want. It's a delicate balance,
+              but we got it right.
+            </div>
+          </div>
+          <div class="screen-three-item">
+            <div class="screen-three-item__img"><img src="assets/img/nectar/tab-2/screen-3-2.jpg" alt="text"></div>
+            <div class="screen-three-item__title">How Does Nectar Feel?</div>
+            <div class="text-regular">We describe the feel of Nectar as a medium-firm memory foam
+              mattress. That’s right in the middle of the firmness scale, where you get the most comfort and support.
+              And the best sleep.
+            </div>
+          </div>
+          <div class="screen-three-item">
+            <div class="screen-three-item__img"><img src="assets/img/nectar/tab-2/screen-3-3.jpg" alt="text"></div>
+            <div class="screen-three-item__title">Under Pressure?</div>
+            <div class="text-regular">Not on a Nectar. Our adaptive memory foam layer is designed to
+              help relieve common pressure points beneath your shoulders, hips, and legs for better spinal alignment on
+              any body type.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-four">
+        <div class="screen-four__content">
+          <div class="screen-four__media">
+            <picture>
+              <source media="(max-width:767px)" srcset="assets/img/nectar/tab-2/screen-4-m.png">
+              <img src="assets/img/nectar/tab-2/screen-4.png" alt="text">
+            </picture>
+          </div>
+          <div class="screen-four__box">
+            <h2>It’s like sleeping on a cloud</h2>
+            <p class="text-regular-m screen-four__description">We've taken the recent advances in mattress and fabric
+              technology and run with them. Having figured out the optimal levels of firmness, coolness, breathability,
+              and comfort - we put them all into one mattress, making it
+              the best mattress you've ever slept on. Period.</p>
+            <a href="#" class="btn btn-regular">Shop Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-five tac">
+        <h2 class="screen-five__title">Unboxing the Nectar Memory Foam Mattress</h2>
+        <p class="screen-five__description">See how easy it is to order and receive a Nectar mattress.</p>
+        <div class="screen-five__container">
+          <div class="screen-five__media">
+            <img src="assets/img/nectar/tab-2/screen-5.jpg" alt="text">
+            <a href="#" class="btn btn-regular screen-five__play">
+              <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23 13L0.5 0.00961876V25.9904L23 13Z" fill="white"/>
+              </svg>
+              <span>Watch Video</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-six tac">
+        <div class="screen-six-item">
+          <div class="screen-six-item__icon"><img src="assets/img/nectar/screen-6-1.svg" alt="text"></div>
+          <div class="screen-six-item__title">Tencel Cooling Cover</div>
+          <div class="text-regular">Nectar’s Cooling Cover with Tencel™ is moisture-wicking, more breathable, and softer
+            than standard cotton covers
+          </div>
+        </div>
+        <div class="screen-six-item">
+          <div class="screen-six-item__icon"><img src="assets/img/nectar/screen-6-2.svg" alt="text"></div>
+          <div class="screen-six-item__title">Gel Memory Foam</div>
+          <div class="text-regular">A cushioning layer of memory foam helps Nectar contour to the areas of your body
+            that need it the most.
+          </div>
+        </div>
+        <div class="screen-six-item">
+          <div class="screen-six-item__icon"><img src="assets/img/nectar/screen-6-3.svg" alt="text"></div>
+          <div class="screen-six-item__title">Wake up rested</div>
+          <div class="text-regular">Whether you’re a back, side or front sleeper, Nectar molds to your body, providing
+            ultimate support.
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-seven">
+        <div class="screen-seven__media"><img src="assets/img/nectar/screen-7.jpg" alt="text"></div>
+        <div class="screen-seven__box">
+          <h2>Are You ready to enjoy Your Best Sleep? </h2>
+          <a href="#" class="btn btn-regular">Shop Now</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="landing-tabs__item" id="tab3">
+
+      <div class="screen-one">
+        <div class="screen-one__content">
+          <h2><span>Best Mattress.</span> <span>Best Value.</span> <span>Best Memory Foam.</span></h2>
+          <p class="screen-one__decription text-regular-m">Fall asleep on your Nectar with a happy sigh and wake up with
+            a “let’s go!”.
+            Gel-infused memory foam gently hugs you asleep. A cool-to-the-touch cover helps keep temps in check. And a
+            dynamic support layer holds your back and lets your muscles relax.</p>
+          <a href="#" class="btn btn-regular">Shop Now</a>
+        </div>
+        <div class="screen-one__media"><img src="assets/img/nectar/tab-3/screen-1.jpg" alt="text"></div>
+      </div>
+
+      <div class="screen-two">
+        <div class="screen-two__container">
+          <img src="assets/img/nectar/tab-3/screen-2.jpg" alt="text">
+          <div class="screen-two__box">
+            <div class="screen-two__logo"><img src="assets/img/nectar/screen-2-logo.svg" alt="text"></div>
+            <h2>Award-Winning Comfort</h2>
+            <a href="#" class="btn screen-two__btn">Shop Now</a>
+          </div>
+          <div class="screen-two__reward">
+            <div class="screen-two__reward-item"><img src="assets/img/nectar/screen-2-reward-1.svg" alt="text">
+            </div>
+            <div class="screen-two__reward-item"><img src="assets/img/nectar/screen-2-reward-2.svg" alt="text">
+            </div>
+            <div class="screen-two__reward-item"><img src="assets/img/nectar/screen-2-reward-3.svg" alt="text">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-three tac">
+        <h2>Why Nectar?</h2>
+        <div class="screen-three__items">
+          <div class="screen-three-item">
+            <div class="screen-three-item__img"><img src="assets/img/nectar/tab-1/screen-3-1.jpg" alt="text"></div>
+            <div class="screen-three-item__title">Ultimate Comfort<br> For Every Sleeper</div>
+            <div class="text-regular">How is that possible, you wonder? Nectar's memory foam mattress
+              layers have the ideal ratio of softness, firmness, and support most people want. It's a delicate balance,
+              but we got it right.
+            </div>
+          </div>
+          <div class="screen-three-item">
+            <div class="screen-three-item__img"><img src="assets/img/nectar/tab-1/screen-3-2.jpg" alt="text"></div>
+            <div class="screen-three-item__title">How Does Nectar Feel?</div>
+            <div class="text-regular">We describe the feel of Nectar as a medium-firm memory foam
+              mattress. That’s right in the middle of the firmness scale, where you get the most comfort and support.
+              And the best sleep.
+            </div>
+          </div>
+          <div class="screen-three-item">
+            <div class="screen-three-item__img"><img src="assets/img/nectar/tab-1/screen-3-3.jpg" alt="text"></div>
+            <div class="screen-three-item__title">Under Pressure?</div>
+            <div class="text-regular">Not on a Nectar. Our adaptive memory foam layer is designed to
+              help relieve common pressure points beneath your shoulders, hips, and legs for better spinal alignment on
+              any body type.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-four">
+        <div class="screen-four__content">
+          <div class="screen-four__media">
+            <picture>
+              <source media="(max-width:767px)" srcset="assets/img/nectar/tab-3/screen-4-m.png">
+              <img src="assets/img/nectar/tab-3/screen-4.png" alt="text">
+            </picture>
+          </div>
+          <div class="screen-four__box">
+            <h2>It’s like sleeping on a cloud</h2>
+            <p class="text-regular-m screen-four__description">We've taken the recent advances in mattress and fabric
+              technology and run with them. Having figured out the optimal levels of firmness, coolness, breathability,
+              and comfort - we put them all into one mattress, making it
+              the best mattress you've ever slept on. Period.</p>
+            <a href="#" class="btn btn-regular">Shop Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-five tac">
+        <h2 class="screen-five__title">Unboxing the Nectar Memory Foam Mattress</h2>
+        <p class="screen-five__description">See how easy it is to order and receive a Nectar mattress.</p>
+        <div class="screen-five__container">
+          <div class="screen-five__media">
+            <img src="assets/img/nectar/tab-3/screen-5.jpg" alt="text">
+            <a href="#" class="btn btn-regular screen-five__play">
+              <svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23 13L0.5 0.00961876V25.9904L23 13Z" fill="white"/>
+              </svg>
+              <span>Watch Video</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-six tac">
+        <div class="screen-six-item">
+          <div class="screen-six-item__icon"><img src="assets/img/nectar/screen-6-1.svg" alt="text"></div>
+          <div class="screen-six-item__title">Tencel Cooling Cover</div>
+          <div class="text-regular">Nectar’s Cooling Cover with Tencel™ is moisture-wicking, more breathable, and softer
+            than standard cotton covers
+          </div>
+        </div>
+        <div class="screen-six-item">
+          <div class="screen-six-item__icon"><img src="assets/img/nectar/screen-6-2.svg" alt="text"></div>
+          <div class="screen-six-item__title">Gel Memory Foam</div>
+          <div class="text-regular">A cushioning layer of memory foam helps Nectar contour to the areas of your body
+            that need it the most.
+          </div>
+        </div>
+        <div class="screen-six-item">
+          <div class="screen-six-item__icon"><img src="assets/img/nectar/screen-6-3.svg" alt="text"></div>
+          <div class="screen-six-item__title">Wake up rested</div>
+          <div class="text-regular">Whether you’re a back, side or front sleeper, Nectar molds to your body, providing
+            ultimate support.
+          </div>
+        </div>
+      </div>
+
+      <div class="screen-seven">
+        <div class="screen-seven__media"><img src="assets/img/nectar/screen-7.jpg" alt="text"></div>
+        <div class="screen-seven__box">
+          <h2>Are You ready to enjoy Your Best Sleep? </h2>
+          <a href="#" class="btn btn-regular">Shop Now</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function () {
+    // tabs switching
+    $('.landing-switch__item').click(function (e) {
+      e.preventDefault();
+      var tabName = $(this).attr('href');
+      $('.landing-switch__item').removeClass('landing-switch__item_active');
+      $(this).addClass('landing-switch__item_active');
+      $('.landing-tabs__item').removeClass('landing-tabs__item_active');
+      $('.landing-tabs__item' + tabName).addClass('landing-tabs__item_active');
+    });
+    // video
+    $('.screen-five__btn').click(function (e) {
+      e.preventDefault();
+      $(this).hide();
+      $(this).closest('.screen-five__media').find('.screen-five__media-poster').hide();
+    });
+  });
+</script>
+</body>
+</html>
